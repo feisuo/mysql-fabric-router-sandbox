@@ -5,4 +5,4 @@
 
 # how to provision
 
-    bundle exec itamae ssh -h default --vagrant ./cookbooks/base_settings/default.rb ./cookbooks/mysql/default.rb
+    bundle exec itamae ssh -h default --vagrant ./cookbooks/base_settings/default.rb ./cookbooks/dotfiles/default.rb ./cookbooks/mysql/default.rb

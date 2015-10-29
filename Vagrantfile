@@ -15,9 +15,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vb.cpus = 1
   end
 
-  config.vm.provision :itamae do |config|
-    config.sudo = true
-    config.recipes = ['./cookbooks/base_settings/default.rb',
-                      './cookbooks/mysql/default.rb']
-  end
+  # config.vm.provision :itamae do |config|
+  #   config.sudo = true
+  #   config.recipes = ['./cookbooks/base_settings/default.rb',
+  #                     './cookbooks/dotfiles/default.rb',
+  #                     './cookbooks/mysql/default.rb']
+  # end
 end
