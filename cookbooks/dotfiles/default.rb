@@ -25,6 +25,10 @@ sed -i".bak" -E "s@cyan@green@g" ./dotfiles/.zshrc
 '
 end
 
+execute 'chsh' do
+  command 'echo /bin/zsh | chsh vagrant'
+end
+
 execute 'install peco' do
   not_if "ls /usr/local/bin/peco"
   command '
