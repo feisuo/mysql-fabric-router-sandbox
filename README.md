@@ -1,7 +1,6 @@
 # how to setup
 
     bundle install --path vendor/bundler
-    vagrant plugin install vagrant-itamae
 
 # how to provision
 
