@@ -30,5 +30,5 @@ end
 end
 
 service 'mysqld' do
-  action [ :enable, :start ]
+  action [ :enable ]
 end

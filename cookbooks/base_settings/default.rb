@@ -14,3 +14,12 @@
     action :install
   end
 end
+
+execute 'disable iptables' do
+  command '
+service iptables stop
+service ip6tables stop
+chkconfig iptables off
+chkconfig ip6tables off
+'
+end
