@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 execute 'install mysql repo' do
-  command 'yum install -y http://dev.mysql.com/get/mysql57-community-release-el6-7.noarch.rpm'
+  command 'yum install -y http://dev.mysql.com/get/mysql57-community-release-el7-7.noarch.rpm'
   not_if "ls /etc/yum.repos.d/mysql-community.repo"
 end
 
@@ -30,5 +30,5 @@ end
 end
 
 service 'mysqld' do
-  action [ :enable ]
+  action [ :enable, :start ]
 end

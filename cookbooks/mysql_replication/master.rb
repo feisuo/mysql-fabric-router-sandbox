@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
-template "/etc/my.cnf"
+template "/etc/my.cnf" do
+  mode   "644"
+end
 
 service 'mysqld' do
   action [ :restart ]
