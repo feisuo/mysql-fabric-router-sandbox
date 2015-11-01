@@ -14,15 +14,17 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #   end
   # end
 
-  # config.vm.define "router" do |node|
-  #   node.vm.box = "centos-7.1"
-  #   node.vm.network :private_network, ip: "192.168.33.11"
-  #   node.vm.hostname = "router"
-  #   node.vm.provider "virtualbox" do |vb|
-  #     vb.customize ["modifyvm", :id, "--memory", "256"]
-  #     vb.customize ["modifyvm", :id, "--cpus",   "1"]
-  #   end
-  # end
+  config.vm.define "router" do |node|
+    node.vm.box = "centos-7.1"
+    node.vm.network :private_network, ip: "192.168.33.11"
+    node.vm.hostname = "router"
+    node.vm.network :forwarded_port,  guest: 7001, host: 7001
+    node.vm.network :forwarded_port,  guest: 7002, host: 7002
+    node.vm.provider "virtualbox" do |vb|
+      vb.customize ["modifyvm", :id, "--memory", "256"]
+      vb.customize ["modifyvm", :id, "--cpus",   "1"]
+    end
+  end
 
   config.vm.define "master0" do |node|
     node.vm.box = "centos-7.1"
