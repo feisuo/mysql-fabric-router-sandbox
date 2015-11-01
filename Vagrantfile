@@ -57,14 +57,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
   end
 
-  # config.vm.define "slave1" do |node|
-  #   node.vm.box = "centos-6.7-mysql56"
-  #   node.vm.network :private_network, ip: "192.168.33.15"
-  #   node.vm.hostname = "slave1"
-  #   node.vm.network :forwarded_port,  guest: 3306, host: 33306
-  #   node.vm.provider "virtualbox" do |vb|
-  #     vb.customize ["modifyvm", :id, "--memory", "256"]
-  #     vb.customize ["modifyvm", :id, "--cpus",   "1"]
-  #   end
-  # end
+  config.vm.define "slave1" do |node|
+    node.vm.box = "centos-6.7-mysql56"
+    node.vm.network :private_network, ip: "192.168.33.15"
+    node.vm.hostname = "slave1"
+    node.vm.network :forwarded_port,  guest: 3306, host: 33306
+    node.vm.provider "virtualbox" do |vb|
+      vb.customize ["modifyvm", :id, "--memory", "256"]
+      vb.customize ["modifyvm", :id, "--cpus",   "1"]
+    end
+  end
 end

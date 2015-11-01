@@ -8,3 +8,4 @@
 
     bundle exec itamae ssh -h master0 --vagrant --node-json nodes/master0.json ./cookbooks/mysql_replication/master.rb
     bundle exec itamae ssh -h slave0 --vagrant --node-json nodes/slave0.json ./cookbooks/mysql_replication/slave.rb
+    bundle exec itamae ssh -h slave1 --vagrant --node-json nodes/slave1.json ./cookbooks/mysql_replication/slave.rb
