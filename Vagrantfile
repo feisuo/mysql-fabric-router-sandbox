@@ -5,7 +5,7 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # config.vm.define "fabric" do |node|
-  #   node.vm.box = "centos-6.7-mysql56"
+  #   node.vm.box = "centos-7.1"
   #   node.vm.network :private_network, ip: "192.168.33.10"
   #   node.vm.hostname = "fabric"
   #   node.vm.provider "virtualbox" do |vb|
@@ -15,7 +15,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # end
 
   # config.vm.define "router" do |node|
-  #   node.vm.box = "centos-6.7-mysql56"
+  #   node.vm.box = "centos-7.1"
   #   node.vm.network :private_network, ip: "192.168.33.11"
   #   node.vm.hostname = "router"
   #   node.vm.provider "virtualbox" do |vb|
@@ -25,7 +25,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # end
 
   config.vm.define "master0" do |node|
-    node.vm.box = "centos-6.7-mysql56"
+    node.vm.box = "centos-7.1"
     node.vm.network :private_network, ip: "192.168.33.12"
     node.vm.hostname = "master0"
     node.vm.network :forwarded_port,  guest: 3306, host: 3306
@@ -36,7 +36,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   # config.vm.define "master1" do |node|
-  #   node.vm.box = "centos-6.7-mysql56"
+  #   node.vm.box = "centos-7.1"
   #   node.vm.network :private_network, ip: "192.168.33.13"
   #   node.vm.hostname = "master1"
   #   node.vm.network :forwarded_port,  guest: 3306, host: 13306
@@ -47,7 +47,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # end
 
   config.vm.define "slave0" do |node|
-    node.vm.box = "centos-6.7-mysql56"
+    node.vm.box = "centos-7.1"
     node.vm.network :private_network, ip: "192.168.33.14"
     node.vm.hostname = "slave0"
     node.vm.network :forwarded_port,  guest: 3306, host: 23306
@@ -58,7 +58,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.vm.define "slave1" do |node|
-    node.vm.box = "centos-6.7-mysql56"
+    node.vm.box = "centos-7.1"
     node.vm.network :private_network, ip: "192.168.33.15"
     node.vm.hostname = "slave1"
     node.vm.network :forwarded_port,  guest: 3306, host: 33306

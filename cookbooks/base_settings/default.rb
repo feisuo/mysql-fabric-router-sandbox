@@ -9,17 +9,13 @@
   git
   curl
   vim
+  tmux
 }.each do |package_name|
   package package_name do
     action :install
   end
 end
 
-execute 'disable iptables' do
-  command '
-service iptables stop
-service ip6tables stop
-chkconfig iptables off
-chkconfig ip6tables off
-'
+service 'firewalld' do
+  action [ :stop, :disable ]
 end
