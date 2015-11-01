@@ -13,4 +13,5 @@ CREATE USER 'repl'@'%' IDENTIFIED BY 'repl';
 GRANT REPLICATION SLAVE ON *.* TO 'repl'@'%';
 EOF
 "
+  not_if "mysql -u root -e 'SELECT host, user FROM mysql.user' | grep repl"
 end

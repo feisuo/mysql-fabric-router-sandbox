@@ -13,4 +13,5 @@ CHANGE MASTER TO MASTER_HOST='#{node[:master_node]}', MASTER_PORT=3306, MASTER_U
 START SLAVE;
 EOF
 "
+  not_if "mysql -u root -e 'SELECT host, user FROM mysql.user' | grep repl"
 end
