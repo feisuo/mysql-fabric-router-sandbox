@@ -1,3 +1,3 @@
 source 'https://rubygems.org'
 
-gem 'itamae', '~> 1.4.2'
+gem 'itamae', '~> 1.6.3'
