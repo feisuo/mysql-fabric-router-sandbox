@@ -2,10 +2,7 @@
 
 template "/etc/my.cnf" do
   mode   "644"
-end
-
-service 'mysqld' do
-  action [ :restart ]
+  notifies :restart, "service[mysqld]", :immediately
 end
 
 execute 'start slave' do

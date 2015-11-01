@@ -32,6 +32,8 @@ enforce-gtid-consistency
 log-bin=mysql-bin
 log-slave-updates
 
+read_only=<%= node[:read_only] %>
+
 [mysqld_safe]
 log-error=/var/log/mysqld.log
 pid-file=/var/run/mysqld/mysqld.pid

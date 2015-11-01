@@ -2,13 +2,10 @@
 
 template "/etc/my.cnf" do
   mode   "644"
+  notifies :restart, "service[mysqld]", :immediately
 end
 
-service 'mysqld' do
-  action [ :restart ]
-end
-
-execute 'create user' do
+execute 'create replication user' do
   command "
 mysql -u root mysql <<EOF
 CREATE USER 'repl'@'%' IDENTIFIED BY 'repl';
