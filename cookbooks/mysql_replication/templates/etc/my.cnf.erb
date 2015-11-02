@@ -32,6 +32,9 @@ enforce-gtid-consistency
 log-bin=mysql-bin
 log-slave-updates
 
+relay-log-info-repository=TABLE
+master-info-repository=TABLE
+
 read_only=<%= node[:read_only] %>
 
 [mysqld_safe]

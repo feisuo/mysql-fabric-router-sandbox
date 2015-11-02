@@ -1,5 +1,5 @@
 {
-  "server_id": 2,
+  "server_id": 4,
   "read_only": "on",
   "master_node": "192.168.33.12"
 }
