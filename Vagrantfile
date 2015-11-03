@@ -22,6 +22,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     node.vm.hostname = "router"
     node.vm.network :forwarded_port,  guest: 7001, host: 7001
     node.vm.network :forwarded_port,  guest: 7002, host: 7002
+    node.vm.network :forwarded_port,  guest: 7003, host: 7003
     node.vm.provider "virtualbox" do |vb|
       vb.customize ["modifyvm", :id, "--memory", "256"]
       vb.customize ["modifyvm", :id, "--cpus",   "1"]

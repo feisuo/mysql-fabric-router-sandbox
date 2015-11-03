@@ -43,3 +43,12 @@ destinations = <%= node[:mysql_nodes] %>
 bind_address = 0.0.0.0:7002
 mode = read-only
 destinations = <%= node[:mysql_nodes] %>
+
+[fabric_cache:fabric0]
+address = <%= node[:fabric_node] %>
+user = fabric
+
+[routing:fabric0]
+bind_address = 0.0.0.0:7003
+mode = read-write
+destinations = fabric+cache://fabric0/group/group_global
