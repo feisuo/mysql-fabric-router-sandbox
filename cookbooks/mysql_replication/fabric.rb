@@ -10,6 +10,7 @@ execute 'create fabric user' do
 mysql -u root mysql <<EOF
 CREATE USER 'fabric'@'%' IDENTIFIED BY 'fabric';
 GRANT ALL ON *.* TO 'fabric'@'%';
+RESET MASTER;
 EOF
 "
   not_if "mysql -u root -e 'SELECT host, user FROM mysql.user' | grep fabric"
