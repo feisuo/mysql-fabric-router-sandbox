@@ -54,7 +54,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "master2" do |node|
     node.vm.box = "centos-7.1"
     node.vm.network :private_network, ip: "192.168.33.14"
-    node.vm.hostname = "master1"
+    node.vm.hostname = "master2"
     node.vm.network :forwarded_port,  guest: 3306, host: 23306
     node.vm.provider "virtualbox" do |vb|
       vb.customize ["modifyvm", :id, "--memory", "256"]
@@ -87,7 +87,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "slave2" do |node|
     node.vm.box = "centos-7.1"
     node.vm.network :private_network, ip: "192.168.33.17"
-    node.vm.hostname = "slave1"
+    node.vm.hostname = "slave2"
     node.vm.network :forwarded_port,  guest: 3306, host: 53306
     node.vm.provider "virtualbox" do |vb|
       vb.customize ["modifyvm", :id, "--memory", "256"]
