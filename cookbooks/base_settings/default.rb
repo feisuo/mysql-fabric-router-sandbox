@@ -10,6 +10,7 @@
   curl
   vim
   tmux
+  net-tools
 }.each do |package_name|
   package package_name do
     action :install
