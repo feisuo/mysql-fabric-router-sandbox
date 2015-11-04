@@ -37,6 +37,9 @@ master-info-repository=TABLE
 
 read_only=<%= node[:read_only] %>
 
+slow_query_log=ON
+long_query_time=0
+
 [mysqld_safe]
 log-error=/var/log/mysqld.log
 pid-file=/var/run/mysqld/mysqld.pid
