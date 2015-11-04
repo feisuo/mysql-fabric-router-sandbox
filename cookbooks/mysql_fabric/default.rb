@@ -71,6 +71,11 @@ mysqlfabric group promote group_global
 mysqlfabric group promote group0
 mysqlfabric group promote group1
 
+# activate
+mysqlfabric group activate group_global
+mysqlfabric group activate group0
+mysqlfabric group activate group1
+
 # confirm group
 mysqlfabric group lookup_groups
 mysqlfabric group lookup_servers group_global
